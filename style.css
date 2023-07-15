@@ -1,26 +1,29 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
-    list-style: none;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  list-style: none;
 }
-body{
- 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 nav {
-  background-color: #333;
+  position: sticky;
+  top: 0;
+  background-color: #000;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  z-index: 999;
+  width: 100%;
 }
 
 .checkbtn {
@@ -30,21 +33,49 @@ nav {
   display: none;
 }
 
+.checkbtn span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.checkbtn.close span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.checkbtn.close span:nth-child(2) {
+  opacity: 0;
+}
+
+.checkbtn.close span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 .checkbtn i {
   pointer-events: none;
+}
+
+#check {
+  display: none;
 }
 
 .logo {
   font-size: 24px;
   color: #fff;
+  font-family: 'Libre Caslon Display', serif;
 }
 
 ul {
   list-style-type: none;
-  display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
+  width: 24rem;
+  display: flex;
+  justify-content: inherit;
 }
 
 li {
@@ -60,22 +91,359 @@ a {
   .checkbtn {
     display: block;
   }
-  
+
   ul {
     display: none;
   }
-  
+
   ul.show {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 108px;
+    background-color: #333;
+  }
+
+  ul.show li {
+    margin: 10px 20px;
+  }
+}
+
+/* Toegevoegde stijlen */
+.nav-active {
+  display: flex !important;
+}
+
+.nav-links li {
+  opacity: 1;
+}
+
+.nav-links li a {
+  pointer-events: none;
+}
+
+.nav-active li {
+  opacity: 1;
+}
+
+.nav-active li a {
+  pointer-events: auto;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bestaande CSS-stijlen */
+
+@media (max-width: 768px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .checkbtn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     background-color: #333;
   }
-  
-  ul.show li {
+
+  .nav-links li {
     margin: 10px 20px;
   }
+
+  .nav-active {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    opacity: 1;
+    animation: none;
+  }
 }
+
+.img1 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.img2 {
+  width: 100%;
+  object-position: 100% 10%;
+  
+}
+
+.img3 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 118.7rem;
+  margin: 0 auto;
+}
+
+.text-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 10%;
+  height: 5rem;
+  width: 77%;
+}
+
+/* W H I R L I N G W O R L D S */
+/* Text reveal animation */
+.section .content #img-text {
+  font-size: 4.1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #FFFFFF;
+  opacity: 1;
+  visibility: visible;
+}
+section .content #goPage {
+  font-size: 4.1vw;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+font-family: 'Inter';
+font-style: normal;
+font-weight: 100;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+color: #FFFFFF;
+
+
+}
+section .content #goPage2 {
+  font-size: 4.1vw;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+font-family: 'Inter';
+font-style: normal;
+font-weight: 100;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+color: #FFFFFF;
+
+
+}
+
+section .content #img-text2 {
+  font-size: 4.1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Libre Caslon Display';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #FFFFFF;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.section .content #img-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+section .content #goPage {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+section .content #goPage2 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+section .content #img-text2 {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Animation styles */
+.char {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition-delay: calc(1s * var(--i));
+}
+
+.char.animate {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.image-text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img1 {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+#img-text {
+  font-size: 4.1vw;
+  font-weight: 400;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .section .content #img-text {
+    font-size: 4vw;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #FFFFFF;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .section .content #img-text {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .section .content #img-text2 {
+    font-size: 4vw;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #FFFFFF;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .section .content #img-text2 {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .section .content #goPage {
+    font-size: 3vw;
+    /* font-weight: bold; */
+    position: absolute;
+    top: 68%;
+  
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    line-height: 32px;
+    color: #FFFFFF;
+  }
+
+  .section .content #goPage {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .section .content #goPage2 {
+    font-size: 3vw;
+    /* font-weight: bold; */
+    position: absolute;
+    top: 68%;
+   
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    line-height: 32px;
+    color: #FFFFFF;
+  }
+
+  .section .content #goPage2 {
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .img1 {
+    background-size: cover;
+    padding-top: 0%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Als het scherm kleiner is dan 768px, verander de aspect ratio naar 1:1 */
+  }
+
+  .img2 {
+    padding-top: 0%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Als het scherm kleiner is dan 768px, verander de aspect ratio naar 1:1 */
+  }
+}
+  
